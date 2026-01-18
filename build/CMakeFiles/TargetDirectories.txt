@@ -1,8 +1,0 @@
-/home/tony/modview/build/CMakeFiles/ModView.dir
-/home/tony/modview/build/CMakeFiles/edit_cache.dir
-/home/tony/modview/build/CMakeFiles/rebuild_cache.dir
-/home/tony/modview/build/SDL_build/CMakeFiles/SDL3-shared.dir
-/home/tony/modview/build/SDL_build/CMakeFiles/SDL3_test.dir
-/home/tony/modview/build/SDL_build/CMakeFiles/SDL_uclibc.dir
-/home/tony/modview/build/SDL_build/CMakeFiles/edit_cache.dir
-/home/tony/modview/build/SDL_build/CMakeFiles/rebuild_cache.dir

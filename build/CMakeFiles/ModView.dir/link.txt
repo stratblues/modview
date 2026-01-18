@@ -1,1 +1,0 @@
-/usr/bin/c++ -O3 -DNDEBUG CMakeFiles/ModView.dir/main.cpp.o -o ModView  -Wl,-rpath,/home/tony/modview/build/SDL_build SDL_build/libSDL3.so.0.5.0 
