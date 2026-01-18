@@ -6,20 +6,22 @@
 #include <iostream>
 
 
-SDL_Window* window;
-SDL_GPUDevice* device;
+static SDL_Window* window;
+static SDL_GPUDevice* device;
 
 static int gameRunning;
 
 int initWindow()
 {
+	char msg[512];
 	gameRunning = 1;
  	window = SDL_CreateWindow("Hello, Triangle!", 960, 540, SDL_WINDOW_RESIZABLE);
 	if(window == NULL)
 	{
 		//TODO: add logging
-		return NULL;
+		exit(1);
 	}
+
         device = SDL_CreateGPUDevice(SDL_GPU_SHADERFORMAT_SPIRV, false, NULL);
 	if(device == NULL)
 	{
