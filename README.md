@@ -1,14 +1,15 @@
-welcome.
+# ModView
 
-project overview:
-  low-latency 3D model viewer and animation simulator
-  goal to have objects simulated in adjustable world space with realistic physics
+## Overview
+**ModView** is a low-latency 3D model viewer and animation simulator.
 
-TODO:
-  window management with render class
-  entity component system architecture
-  model loading
-  graphics API pipeline
+The goal of this project is to support objects simulated in an adjustable world space with realistic physics behavior, while maintaining high performance and responsiveness.
+
+## Planned Features
+- Window management integrated with the render system
+- Entity–Component–System (ECS) architecture
+- 3D model loading
+- Graphics API rendering pipeline
 
 
   
