@@ -1,9 +1,8 @@
 # ModView
 
 ## Overview
-**ModView** is a low-latency 3D model viewer and animation simulator.
+**ModView** is a 3D engine supporting realistic physics with responsive object interactions.
 
-The goal of this project is to support objects simulated in an adjustable world space with realistic physics behavior, while maintaining high performance and responsiveness.
 
 ## Planned Features
 - Window management integrated with the render system
