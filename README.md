@@ -1,14 +1,13 @@
 # ModView
 
 ## Overview
-**ModView** is a 3D engine supporting realistic physics with responsive object interactions.
+**ModView** is a 3D model viewer for testing lighting algorithms and other parallel computations. The goal is to utilize SDL_gpu for cross-platform, GPU agnostic compute; while maintaining a structured hirearchy of TLP, DLP, and ILP. The result should be a low-latency, high-throughput system to increase quality and speed of rendering algorithms. 
 
-
-## Planned Features
-- Window management integrated with the render system
-- Entity–Component–System (ECS) architecture
+## rough outline of planned features
+- Window management integrated with the render system and full GPU pipeline
+- Multithreaded Entity–Component–System (ECS) architecture
 - 3D model loading
-- Graphics API rendering pipeline
+  
 
 
   
