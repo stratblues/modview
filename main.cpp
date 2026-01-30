@@ -1,4 +1,4 @@
-//#define SDL_MAIN_USE_CALLBACKS
+//#define SDL_MAIN_USE_CALLBACKS
 #include <SDL3/SDL.h>
 #include <SDL3/SDL_main.h> 
 #include <stdlib.h>
@@ -6,37 +6,47 @@
 #include <iostream>
 
 
-static SDL_Window* window;
-static SDL_GPUDevice* device;
 
-static int gameRunning;
+static SDL_Window* window = nullptr;
+static SDL_GPUDevice* device = nullptr;
+static int gameRunning = 0;
 
 int initWindow()
 {
-	char msg[512];
+	
+	
+	if(SDL_Init(SDL_INIT_VIDEO) == 0)
+	{
+		SDL_Log("SDL_Init failed: %s", SDL_GetError());
+        	return 0;
+	}
 	gameRunning = 1;
  	window = SDL_CreateWindow("Hello, Triangle!", 960, 540, SDL_WINDOW_RESIZABLE);
-	if(window == NULL)
+	if(window == nullptr)
 	{
-		//TODO: add logging
-		exit(1);
+		SDL_Log("SDL_CreateWindow failed: %s", SDL_GetError());
+		return 0;
 	}
 
-        device = SDL_CreateGPUDevice(SDL_GPU_SHADERFORMAT_SPIRV, false, NULL);
-	if(device == NULL)
+        device = SDL_CreateGPUDevice(SDL_GPU_SHADERFORMAT_SPIRV, true, nullptr);
+	if(device == nullptr)
 	{
-		return NULL;
+		SDL_Log("SDL_CreateDevice failed: %s", SDL_GetError());
+		return 0;
 	}
 
         SDL_ClaimWindowForGPUDevice(device, window);	
-
+	return 1;
 }
 
 
 int main
 ()
 {
-	initWindow();
+	if(initWindow() == 0)
+	{
+		return 1;
+	}
 	while(gameRunning)
 	{
 		SDL_Event event;
@@ -50,9 +60,23 @@ int main
 					break;
 			}
 		}
-
+	
+	
 	}
-	    	
+	SDL_DestroyGPUDevice(device);
+    	SDL_DestroyWindow(window);
+    	SDL_Quit();
     	return 0;
 }
+
+
+
+
+
+
+
+
+
+
+
 
